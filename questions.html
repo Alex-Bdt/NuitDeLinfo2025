@@ -1,0 +1,69 @@
+<html lang="fr">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EcoNum Challenge</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <header>
+            <h1>EcoNum Challenge</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="questions.html">Toutes les questions</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>Toutes les questions & explications</h2>
+            <p>Cliquez sur chaque question pour afficher son explication.</p>
+
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-question">Quel est l’impact principal du streaming vidéo ? <span
+                            class="arrow">▼</span></button>
+                    <div class="faq-answer">
+                        Le streaming vidéo consomme beaucoup de bande passante et demande énormément d’énergie aux centres de
+                        données, ce qui augmente l’empreinte carbone du numérique.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Pourquoi faut-il limiter le stockage cloud inutile ? <span
+                            class="arrow">▼</span></button>
+                    <div class="faq-answer">
+                        Les données conservées dans le cloud doivent être stockées sur des serveurs en fonctionnement constant.
+                        Plus les serveurs tournent, plus l’énergie consommée augmente.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Est-il utile d’éteindre ses appareils au lieu de les laisser en veille ? <span
+                            class="arrow">▼</span></button>
+                    <div class="faq-answer">
+                        Oui ! La veille consomme moins qu’un appareil actif, mais elle consomme tout de même. Éteindre
+                        complètement permet une vraie économie d’énergie.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const items = document.querySelectorAll('.faq-question');
+
+
+            items.forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const arrow = button.querySelector('.arrow');
+
+                    answer.classList.toggle('open');
+                    arrow.classList.toggle('rotate');
+                });
+            });
+        </script>
+    </body>
+</html>
