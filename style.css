@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eef5f8;
+    font-family: "Press Start 2P", sans-serif;
+    background: #1a1a1a;
 }
 
 header {
@@ -12,6 +12,12 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #ffdc22;
+    text-shadow: 4px 4px 0 #c39200;
+    margin-bottom: 40px;
 }
 
 header h1 {
@@ -33,7 +39,7 @@ nav a:hover {
 .container {
     max-width: 850px;
     margin: 60px auto;
-    background: white;
+    background: #2e2e2e;
     padding: 35px;
     border-radius: 14px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -43,32 +49,60 @@ nav a:hover {
 .container h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    color: #256677;
+    color: #ffdc22;
 }
 
 .container p {
     font-size: 1.15rem;
     line-height: 1.7;
-    color: #333;
+    color: #dcdcdc;
 }
 
 .btn {
     display: inline-block;
     margin-top: 30px;
-    padding: 15px 35px;
+    padding: 10px 30px;
     font-size: 1.2rem;
-    background: #2fa88d;
-    color: white;
+    background: #256677;
+    color: #dcdcdc;
+    border: 6px solid #ffffff;
+    box-shadow: 0 8px 0 #777;
     text-decoration: none;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
+.quiz_text {
+    animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
 .btn:hover {
-    background: #20806a;   }
+    background: #20806a;
+}
 
+.btn_hidden {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 8px 28px;
+    font-size: 1rem;
+    background: #256677;
+    color: #dcdcdc;
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 0 #777;
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: "Press Start 2P", sans-serif;
+}
 
-
+.btn_hidden:hover {
+    background: #20806a;
+}
 
 .faq {
     margin-top: 30px;
@@ -78,18 +112,19 @@ nav a:hover {
 .faq-item {
     margin-bottom: 15px;
     border: 1px solid #cbd5d8;
-    border-radius: 10px;
+    box-shadow: 0 8px 0 #777;
     overflow: hidden;
 }
 
 .faq-question {
     width: 100%;
     background: #256677;
-    color: white;
+    font-family: "Press Start 2P", sans-serif;
+    color: #dcdcdc;
     padding: 15px;
     font-size: 1.1rem;
     text-align: left;
-    border: none;
+    border: 6px solid #ffffff;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
