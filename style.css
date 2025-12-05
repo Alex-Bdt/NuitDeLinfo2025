@@ -14,15 +14,15 @@ header {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
 h2 {
     color: #ffdc22;
     text-shadow: 4px 4px 0 #c39200;
     margin-bottom: 40px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
 }
 
 nav a {
@@ -60,34 +60,6 @@ nav a:hover {
 
 .btn {
     display: inline-block;
-    margin-top: 30px;
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    background: #256677;
-    color: #dcdcdc;
-    border: 6px solid #ffffff;
-    box-shadow: 0 8px 0 #777;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.quiz_text {
-    animation: blink 1s steps(1, end) infinite;
-}
-
-@keyframes blink {
-  0%   { opacity: 1; }
-  50%  { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-.btn:hover {
-    background: #20806a;
-}
-
-.btn_hidden {
-    display: inline-block;
     margin-top: 26px;
     padding: 8px 28px;
     font-size: 1rem;
@@ -98,11 +70,14 @@ nav a:hover {
     text-decoration: none;
     transition: 0.3s;
     font-family: "Press Start 2P", sans-serif;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.btn_hidden:hover {
+.btn:hover {
     background: #20806a;
 }
+
 
 .faq {
     margin-top: 30px;
@@ -113,6 +88,7 @@ nav a:hover {
     margin-bottom: 15px;
     border: 1px solid #cbd5d8;
     box-shadow: 0 8px 0 #777;
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -121,6 +97,7 @@ nav a:hover {
     background: #256677;
     font-family: "Press Start 2P", sans-serif;
     color: #dcdcdc;
+    color: white;
     padding: 15px;
     font-size: 1.1rem;
     text-align: left;
@@ -151,6 +128,16 @@ nav a:hover {
 }
 
 
+.quiz_text {
+    animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
 .quiz-buttons {
     display: flex;
     flex-direction: center;
@@ -164,12 +151,16 @@ nav a:hover {
     padding: 50px 15px;         
     font-size: 1.1rem;
     border-radius: 10px;
-    border: 2px solid #256677;
-    background: #eef5f8;
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 0 #777;
+    background: #256677;
     cursor: pointer;
     transition: transform 5.0s ease;
     transition: rotate 0.1s linear;
     width: 50%;
+    font-family: "Press Start 2P", sans-serif;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .answer-btn .fill{
@@ -177,11 +168,15 @@ nav a:hover {
     inset: 0;
     background: red;
     z-index: -1;
-
     transform-origin: left;
     transform: scaleX(0);
     transition: transform 0.1s linear;
 }
 
 .answer-btn:hover {
-    background: #dcecef;   }
+    background: #dcecef;   
+}
+
+#next-btn.hidden{
+    display: none;
+}
