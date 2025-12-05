@@ -15,13 +15,79 @@ const questions = [
 
 
 let current = 0;
+let isPressed = false;
+let btnAPressed = false;
+let btnBPressed = false;
+let angle;
+let progress;
 
 
 const btnA = document.getElementById("btnA");
 const btnB = document.getElementById("btnB");
+const btnAFill = btnA.querySelector(".fill");
+const btnBFill = btnB.querySelector(".fill");
 const exp = document.getElementById("explanation");
 const nextBtn = document.getElementById("next-btn");
+const arcade_sound = new Audio("ressourses/arcade_sound.mp3");
 
+
+//LES EVENTS LISTENERS:
+
+document.addEventListener("keydown", function(event){
+   if(isPressed==false){
+        progress = 0;
+    	 switch(event.key){
+       	 case "ArrowLeft":
+       	     btnA.style.transform = "scale(1.03)";
+             
+       	     arcade_sound.cloneNode().play();
+       	     break;
+       	 case "ArrowRight":
+      	      btnB.style.transform = "scale(1.03)";
+      	      arcade_sound.cloneNode().play();
+   	         break;
+
+	    }
+        isPressed=true;
+    }
+    if(progress < 1){
+        progress += 0.04;
+    }
+    switch(event.key){
+       	case "ArrowLeft":
+            angle = Math.random()* 4 - 2;
+            btnAFill.style.transform = `scaleX(${progress})`;
+            btnA.style.rotate = `${angle}deg`;
+            if(progress>=1){
+                selectAnswer(0);
+            }
+            break;
+        case "ArrowRight":
+            angle = Math.random()* 4 - 2;
+            btnBFill.style.transform = `scaleX(${progress})`;
+            btnB.style.rotate = `${angle}deg`;
+            if(progress>=1){
+                selectAnswer(1);
+            }
+            break;
+    }
+    
+
+});
+
+document.addEventListener("keyup", function(event){
+    isPressed = false;
+    switch(event.key){
+        case "ArrowLeft":
+            btnA.style.transform = "scale(1.0)";
+            btnA.style.rotate = "0deg";
+            break;
+        case "ArrowRight":
+            btnB.style.transform = "scale(1.0)";
+            btnB.style.rotate = "0deg";
+    }
+
+});
 
 function loadQuestion() {
     document.getElementById("question-number").textContent = current + 1;

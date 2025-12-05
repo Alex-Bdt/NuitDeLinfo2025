@@ -61,7 +61,7 @@ nav a:hover {
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .btn:hover {
@@ -127,13 +127,27 @@ nav a:hover {
 }
 
 .answer-btn {
+    overflow: hidden;
+    position: relative;
     padding: 15px;
     font-size: 1.1rem;
     border-radius: 10px;
     border: 2px solid #256677;
     background: #eef5f8;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 5.0s ease;
+    transition: rotate 0.1s linear;
+}
+
+.answer-btn .fill{
+    position: absolute;
+    inset: 0;
+    background: red;
+    z-index: -1;
+
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s linear;
 }
 
 .answer-btn:hover {
